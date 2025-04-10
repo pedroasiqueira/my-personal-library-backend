@@ -29,4 +29,8 @@ export class UsersService {
   async remove(id: string) {
     return await this.userModel.findByIdAndDelete(id).exec();
   }
+
+  async findByEmail(email: string) {
+    return this.userModel.findOne({ email }).exec();
+  }
 }
