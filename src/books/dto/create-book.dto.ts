@@ -1,4 +1,4 @@
-import { IsNumber, IsString, IsDate, IsIn, IsDateString, IsNotEmpty } from "class-validator";
+import { IsNumber, IsString, IsDate, IsIn, IsDateString, IsNotEmpty, IsOptional } from "class-validator";
 
 export class CreateBookDto {
   @IsString()
@@ -13,6 +13,7 @@ export class CreateBookDto {
   @IsNotEmpty()
   startDate: Date;
 
+  @IsOptional()
   @IsDateString()
   endDate: Date;
 
@@ -22,6 +23,6 @@ export class CreateBookDto {
 
   @IsNumber()
   @IsIn([1, 2, 3, 4, 5])
-  @IsNotEmpty()
+  @IsOptional()
   avaliation: number;
 }
