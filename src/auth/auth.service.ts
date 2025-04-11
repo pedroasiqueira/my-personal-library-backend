@@ -31,6 +31,13 @@ export class AuthService {
     if (existing) throw new UnauthorizedException('E-mail já cadastrado');
 
     const hashed = await bcrypt.hash(data.password, 10);
-    return this.usersService.create({ ...data, password: hashed });
+    const newUser = await this.usersService.create({ ...data, password: hashed });
+    
+    // Gerar token para o usuário recém-cadastrado
+    const payload = { sub: newUser._id };
+    return {
+      user: newUser,
+      access_token: this.jwtService.sign(payload),
+    };
   }
 }
