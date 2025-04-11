@@ -7,7 +7,7 @@ async function bootstrap() {
   
   // Configuração do CORS
   app.enableCors({
-    origin: 'http://localhost:3001', // URL do frontend React
+    origin: ['http://localhost:3001', 'https://my-personal-library-frontend.vercel.app'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
