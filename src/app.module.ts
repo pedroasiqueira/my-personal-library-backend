@@ -7,6 +7,7 @@ import { BooksModule } from './books/books.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { GoogleBooksModule } from './google-books/google-books.module';
+import { CommentsModule } from './comments/comments.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { GoogleBooksModule } from './google-books/google-books.module';
     BooksModule,
     AuthModule,
     GoogleBooksModule,
+    CommentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
