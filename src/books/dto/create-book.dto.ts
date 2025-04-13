@@ -23,6 +23,6 @@ export class CreateBookDto {
 
   @IsNumber()
   @IsIn([1, 2, 3, 4, 5])
-  @IsOptional()
+  @IsNotEmpty()
   avaliation: number;
 }

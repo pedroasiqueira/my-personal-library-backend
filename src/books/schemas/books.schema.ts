@@ -20,7 +20,7 @@ export class Book {
   @Prop({ required: true })
   status: string;
 
-  @Prop({ required: false })
+  @Prop({ required: true })
   avaliation: number;
   
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true })
